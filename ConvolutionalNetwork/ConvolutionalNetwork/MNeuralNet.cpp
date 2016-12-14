@@ -137,6 +137,7 @@ void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int positio
 	
 	setInput(filePath, net->input, position);
 	
+	printf("The result should be %d \n", net->input->label + 1);
 	printf("Starting to evaluate %d file. \n", position);
 	layers->convLayer->forward_layer();
 	layers->poolLayer->forward_layer();
@@ -158,6 +159,7 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	setInputAndResult(filePath, net->input,position);
 	
 	printf("Starting to learn %d.file \n", position + 1);
+	printf("The result should be %d \n", net->input->label + 1);
 
 	layers->convLayer->forward_layer();
 	layers->poolLayer->forward_layer();
