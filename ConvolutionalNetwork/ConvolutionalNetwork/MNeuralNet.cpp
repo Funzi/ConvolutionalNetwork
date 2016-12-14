@@ -6,6 +6,7 @@
 #include <fstream>
 
 using namespace std;
+static int correctCount = 0;
 
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
@@ -108,6 +109,24 @@ void setInputAndResult(std::string filename, Input* input, int position) {
 	createResultArray(input->label);
 }
 
+int findTheBiggestPossibility(double* output) {
+	double temp = output[0];
+	int biggest = 1;
+	for (int i = 0; i < 10; i++) {
+		if (output[i] > temp) {
+			temp = output[i];
+			biggest = i;
+		}
+	}
+	return biggest;
+}
+
+void checkResult(MyNeuralNet* net) {
+	double temp = findTheBiggestPossibility(net->results);
+	if (temp == net->input->label)
+		correctCount++;
+}
+
 void MNeuralNet::Init(MyNeuralNet* net)
 {
 	net->layers = (Layers*)malloc(sizeof(Layers));
@@ -129,6 +148,7 @@ void MNeuralNet::Evaluate(MyNeuralNet * net, string path)
 	for (int i = 0; i < BATCH_SIZE; i++) {
 		EvaluateOneFile(net, path,i);
 	}
+	printf("\nEvaluation was correct in %f%% \n", (double)correctCount / (double)BATCH_SIZE);
 }
 
 void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int position)
@@ -143,6 +163,7 @@ void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int positio
 	layers->poolLayer->forward_layer();
 	layers->FCLayer->forward_layer();
 	layers->FCLayer->print();
+	checkResult(net);
 }
 
 void MNeuralNet::Learn(MyNeuralNet* net, string path)
@@ -150,6 +171,8 @@ void MNeuralNet::Learn(MyNeuralNet* net, string path)
 	for (int i = 0; i < 100; i++) {
 		LearnOneFile(net, path, i);
 	}
+	printf("\nEvaluation was correct in %f%% \n", (double)correctCount / (double)BATCH_SIZE);
+
 }
 
 void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int position)
@@ -166,6 +189,7 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	layers->FCLayer->forward_layer();
 	layers->FCLayer->print();
 	((FCLayer*)(layers->FCLayer))->computeError(net->results);
+	checkResult(net);
 	
 	layers->FCLayer->backProp_layer();
 	layers->poolLayer->backProp_layer();
@@ -181,6 +205,8 @@ void MNeuralNet::Release(MyNeuralNet* net)
 	free(net->input->values);
 	free(net->input);
 }
+
+
 
 
 
