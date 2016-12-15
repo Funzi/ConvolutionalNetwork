@@ -90,6 +90,12 @@ void FCLayer::print() {
     std::cout << std::endl;
 }
 
+void FCLayer::setResults(double* results) {
+	for (int i = 0; i < 10; i++) {
+		results[i] = out[i];
+	}
+}
+
 void FCLayer::learn() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j<in; j++) {

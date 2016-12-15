@@ -91,8 +91,7 @@ static void setInput(std::string filename, Input* input, int position)
 	file.close();
 }
 
-double* createResultArray(int label) {
-	double resultArray[10];
+void createResultArray(int label, double* resultArray) {
 	for (int i = 0; i < 10; i++) {
 		if (i == label) {
 			resultArray[i] = 1;
@@ -101,18 +100,17 @@ double* createResultArray(int label) {
 			resultArray[i] = 0;
 		}
 	}
-	return resultArray;
 }
 
-void setInputAndResult(std::string filename, Input* input, int position) {
-	setInput(filename, input, position);
-	createResultArray(input->label);
+void setInputAndResult(std::string filename, MyNeuralNet* net, int position) {
+	setInput(filename, net->input, position);
+	createResultArray(net->input->label, net->results);
 }
 
 int findTheBiggestPossibility(double* output) {
 	double temp = output[0];
 	int biggest = 1;
-	for (int i = 0; i < 10; i++) {
+	for (int i = 1; i < 10; i++) {
 		if (output[i] > temp) {
 			temp = output[i];
 			biggest = i;
@@ -168,10 +166,10 @@ void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int positio
 
 void MNeuralNet::Learn(MyNeuralNet* net, string path)
 {
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < BATCH_SIZE; i++) {
 		LearnOneFile(net, path, i);
 	}
-	printf("\nEvaluation was correct in %f%% \n", (double)correctCount / (double)BATCH_SIZE);
+	printf("\nEvaluation was correct in %f%% \n", (double)correctCount *100 / (double)BATCH_SIZE);
 
 }
 
@@ -179,7 +177,7 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 {
 	Layers* layers = net->layers;
 	
-	setInputAndResult(filePath, net->input,position);
+	setInputAndResult(filePath, net,position);
 	
 	printf("Starting to learn %d.file \n", position + 1);
 	printf("The result should be %d \n", net->input->label + 1);
@@ -189,6 +187,7 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	layers->FCLayer->forward_layer();
 	layers->FCLayer->print();
 	((FCLayer*)(layers->FCLayer))->computeError(net->results);
+	((FCLayer*)(layers->FCLayer))->setResults(net->results);
 	checkResult(net);
 	
 	layers->FCLayer->backProp_layer();

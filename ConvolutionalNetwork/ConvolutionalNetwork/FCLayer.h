@@ -68,6 +68,8 @@ public:
     */
     void print();
 
+	void setResults(double* results);
+
     /**
     * @brief destructor
     */
