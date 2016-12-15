@@ -15,13 +15,14 @@ PoolLayer::PoolLayer(Layer* lower) {
     depth = down->depth;
     down_ddot = down->ddot;
 
-    out = new double[n];
-    ddot = new double[n];
+    out = new double[n*depth];
+    ddot = new double[n*depth];
 
 }
 
 void PoolLayer::forward_layer() {
 
+    double sum;
     int b,s;
     for (int k = 0; k < depth; k++) {
         for (int i = 0; i < dim; i++) {
@@ -29,8 +30,10 @@ void PoolLayer::forward_layer() {
                 b = k*in + 2 * i * input_dim + 2 * j;
                 s = k*n + i * dim + j;
 
-                out[s] = std::max(std::max(input[b], input[b + 1]),
+                sum = std::max(std::max(input[b], input[b + 1]),
                                       std::max(input[b + input_dim], input[b + input_dim + 1]));
+
+                out[s] = sum;
                 down_ddot[b] = (out[s] == input[b]) ? 1 : 0;
                 down_ddot[b + 1] = (out[s] == input[b + 1]) ? 1 : 0;
                 down_ddot[b + input_dim] = (out[s] == input[b + input_dim]) ? 1 : 0;
@@ -69,6 +72,6 @@ void PoolLayer::print() {
 
 
 PoolLayer::~PoolLayer() {
-    delete ddot;
-    delete out;
+    delete []ddot;
+    delete []out;
 }

@@ -1,5 +1,5 @@
 //
-// Created by bobby on 2.12.16.
+// Created by Filip Lux on 2.12.16.
 //
 
 #ifndef FULLCONNECTEDNEURALNET_LAYER_H
@@ -7,9 +7,9 @@
 
 #include <cmath>        //include exp
 #include <algorithm>    //include rand
-#define INIT_MAX 0.1  //max initialize weight
-#define INIT_MIN -0.1 //min initialize weight
-#define LR 0.001  //learning rate
+#define INIT_MAX 0.0001  //max initialize weight
+#define INIT_MIN -0.0001 //min initialize weight
+#define LR 0.01  //learning rate
 
 
 //random function used for initialisation of weights
@@ -55,11 +55,15 @@ public:
     *@brief bias of layer
     */
     double* bias;
+    /**
+    *@brief bias of layer
+    */
 
     double* input;
     double* down_ddot;
     int depth;
     int input_dim;
+    int input_depth;
     int dim;
 
     /**

@@ -10,10 +10,13 @@
 
 
 // fullConnected layer
-FCLayer::FCLayer(int inputs, int neurons, Layer* lower) { //creates layer, number of inputs and neurons
+FCLayer::FCLayer(int inputs, int neurons, Layer* lower) {//creates layer, number of inputs and neurons
+
+
     n = neurons;
-    in = inputs;
     down = lower;
+    depth = 1;
+    in = (down->n) * (down->depth);
 	down_ddot = down->ddot;
     input = down->out;
     down->ou = n;
@@ -32,7 +35,7 @@ FCLayer::FCLayer(int inputs, int neurons, Layer* lower) { //creates layer, numbe
     }
 }
 
-FCLayer::FCLayer(int &inputs, int &neurons) {
+FCLayer::FCLayer(int inputs, int neurons) {
     n = neurons;
     in = inputs;
     ddot = new double[n];
@@ -57,27 +60,46 @@ FCLayer::~FCLayer() {
 };
 
 void FCLayer::forward_layer() { //step forward with activation function
+    double sum = 0;
+    double cs = -4;
     for (int i = 0; i < n; i++) {
         out[i] = bias[i];
         for (int j = 0; j < in; j++) {
+            cs = out[i];
             out[i] += w[i*in+j] * input[j];
+
         }
+        //out[i] = exp(out[i]);
+        //sum += out[i];
         out[i] = sigma(out[i]);
+        //sum = out[i];
+        //sum += bsum;
     }
+    //for (int i = 0; i < n; i++) {
+    //    out[i] = out[i] / sum;
+    //}
 }
 
 void FCLayer::backProp_layer() {
+    //derivate of activation function
+
     for (int i = 0; i < n; i++) {
-        down_ddot[i] = 0;
-        for (int j = 0; j < ou; j++) {
-           down_ddot[i] += ddot[j] * w[i+j*ou];
-        }
+        ddot[i] *= out[i] * (1-out[i]);
     }
+
+    if (down != NULL)
+        for (int i = 0; i < in; i++) {
+            down_ddot[i] = 0;
+            for (int j = 0; j < n; j++) {
+               down_ddot[i] += ddot[j] * w[i+j*n];
+            }
+        }
 }
 
-void FCLayer::computeError(double* result) {
+void FCLayer::updateDDot(double* error) {
     for (int i = 0; i < n; i++) {
-        ddot[i] = (out[i] - result[i]) * out[i] * (1-out[i]);
+        //ddot[i] = (out[i] - result[i]) * out[i] * (1-out[i]);
+        ddot[i] = error[i];
     }
 }
 

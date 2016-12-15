@@ -43,10 +43,10 @@ RM = /home/bobby/CLion/clion-2016.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork
+CMAKE_SOURCE_DIR = /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug
+CMAKE_BINARY_DIR = /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/NN_neuron.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/NN_neuron.dir/flags.make
 
 CMakeFiles/NN_neuron.dir/main.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
 CMakeFiles/NN_neuron.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NN_neuron.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/main.cpp.o -c /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NN_neuron.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/main.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp
 
 CMakeFiles/NN_neuron.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp > CMakeFiles/NN_neuron.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp > CMakeFiles/NN_neuron.dir/main.cpp.i
 
 CMakeFiles/NN_neuron.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp -o CMakeFiles/NN_neuron.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp -o CMakeFiles/NN_neuron.dir/main.cpp.s
 
 CMakeFiles/NN_neuron.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/NN_neuron.dir/main.cpp.o.provides.build: CMakeFiles/NN_neuron.dir/mai
 
 CMakeFiles/NN_neuron.dir/FCLayer.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
 CMakeFiles/NN_neuron.dir/FCLayer.cpp.o: ../FCLayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NN_neuron.dir/FCLayer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/FCLayer.cpp.o -c /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NN_neuron.dir/FCLayer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/FCLayer.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp
 
 CMakeFiles/NN_neuron.dir/FCLayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/FCLayer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp > CMakeFiles/NN_neuron.dir/FCLayer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp > CMakeFiles/NN_neuron.dir/FCLayer.cpp.i
 
 CMakeFiles/NN_neuron.dir/FCLayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/FCLayer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp -o CMakeFiles/NN_neuron.dir/FCLayer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp -o CMakeFiles/NN_neuron.dir/FCLayer.cpp.s
 
 CMakeFiles/NN_neuron.dir/FCLayer.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/NN_neuron.dir/FCLayer.cpp.o.provides.build: CMakeFiles/NN_neuron.dir/
 
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o: ../PoolLayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o -c /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp
 
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/PoolLayer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp > CMakeFiles/NN_neuron.dir/PoolLayer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp > CMakeFiles/NN_neuron.dir/PoolLayer.cpp.i
 
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/PoolLayer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp -o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp -o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.s
 
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o.provides.build: CMakeFiles/NN_neuron.di
 
 CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
 CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o: ../ConvLayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o -c /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp
 
 CMakeFiles/NN_neuron.dir/ConvLayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/ConvLayer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp > CMakeFiles/NN_neuron.dir/ConvLayer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp > CMakeFiles/NN_neuron.dir/ConvLayer.cpp.i
 
 CMakeFiles/NN_neuron.dir/ConvLayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/ConvLayer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp -o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp -o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.s
 
 CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o.provides.build: CMakeFiles/NN_neuron.di
 
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o: ../NeuralNet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o -c /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp
 
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/NeuralNet.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp > CMakeFiles/NN_neuron.dir/NeuralNet.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp > CMakeFiles/NN_neuron.dir/NeuralNet.cpp.i
 
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/NeuralNet.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp -o CMakeFiles/NN_neuron.dir/NeuralNet.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp -o CMakeFiles/NN_neuron.dir/NeuralNet.cpp.s
 
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o.requires:
 
@@ -177,13 +177,38 @@ CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o.provides: CMakeFiles/NN_neuron.dir/Neur
 CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o.provides.build: CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o
 
 
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o: CMakeFiles/NN_neuron.dir/flags.make
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o: ../MNeuralNet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o -c /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.cpp
+
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.cpp > CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.i
+
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.cpp -o CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.s
+
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.requires:
+
+.PHONY : CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.requires
+
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.provides: CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.provides.build
+.PHONY : CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.provides
+
+CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.provides.build: CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o
+
+
 # Object files for target NN_neuron
 NN_neuron_OBJECTS = \
 "CMakeFiles/NN_neuron.dir/main.cpp.o" \
 "CMakeFiles/NN_neuron.dir/FCLayer.cpp.o" \
 "CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o" \
 "CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o" \
-"CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o"
+"CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o" \
+"CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o"
 
 # External object files for target NN_neuron
 NN_neuron_EXTERNAL_OBJECTS =
@@ -193,9 +218,10 @@ NN_neuron: CMakeFiles/NN_neuron.dir/FCLayer.cpp.o
 NN_neuron: CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o
 NN_neuron: CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o
 NN_neuron: CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o
+NN_neuron: CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o
 NN_neuron: CMakeFiles/NN_neuron.dir/build.make
 NN_neuron: CMakeFiles/NN_neuron.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable NN_neuron"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable NN_neuron"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NN_neuron.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +234,7 @@ CMakeFiles/NN_neuron.dir/requires: CMakeFiles/NN_neuron.dir/FCLayer.cpp.o.requir
 CMakeFiles/NN_neuron.dir/requires: CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o.requires
 CMakeFiles/NN_neuron.dir/requires: CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o.requires
 CMakeFiles/NN_neuron.dir/requires: CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o.requires
+CMakeFiles/NN_neuron.dir/requires: CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o.requires
 
 .PHONY : CMakeFiles/NN_neuron.dir/requires
 
@@ -216,6 +243,6 @@ CMakeFiles/NN_neuron.dir/clean:
 .PHONY : CMakeFiles/NN_neuron.dir/clean
 
 CMakeFiles/NN_neuron.dir/depend:
-	cd /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/NN_neuron.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/NN_neuron.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NN_neuron.dir/depend
 

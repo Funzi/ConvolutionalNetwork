@@ -1,5 +1,5 @@
 //
-// Created by bobby on 27.11.16.
+// Created by Filip Lux on 27.11.16.
 //
 
 #include <vector>
@@ -21,11 +21,11 @@ public:
     /**
     *@brief dimension of whole net
     */
-    int depth, w_dim, s;
+    int w_dim,s;
     /**
     *@brief deep of lower layer
     */
-    int input_depth;
+
 
     ConvLayer(int filter_dim, int stroke, int filters, int in_dim, int in_depth, double* input);
 

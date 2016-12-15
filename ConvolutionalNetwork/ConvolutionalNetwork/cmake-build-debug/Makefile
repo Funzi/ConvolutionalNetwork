@@ -48,10 +48,10 @@ RM = /home/bobby/CLion/clion-2016.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork
+CMAKE_SOURCE_DIR = /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug
+CMAKE_BINARY_DIR = /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,6 +176,33 @@ FCLayer.s: FCLayer.cpp.s
 FCLayer.cpp.s:
 	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/FCLayer.cpp.s
 .PHONY : FCLayer.cpp.s
+
+MNeuralNet.o: MNeuralNet.cpp.o
+
+.PHONY : MNeuralNet.o
+
+# target to build an object file
+MNeuralNet.cpp.o:
+	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o
+.PHONY : MNeuralNet.cpp.o
+
+MNeuralNet.i: MNeuralNet.cpp.i
+
+.PHONY : MNeuralNet.i
+
+# target to preprocess a source file
+MNeuralNet.cpp.i:
+	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.i
+.PHONY : MNeuralNet.cpp.i
+
+MNeuralNet.s: MNeuralNet.cpp.s
+
+.PHONY : MNeuralNet.s
+
+# target to generate assembly for a file
+MNeuralNet.cpp.s:
+	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.s
+.PHONY : MNeuralNet.cpp.s
 
 NeuralNet.o: NeuralNet.cpp.o
 
@@ -273,6 +300,9 @@ help:
 	@echo "... FCLayer.o"
 	@echo "... FCLayer.i"
 	@echo "... FCLayer.s"
+	@echo "... MNeuralNet.o"
+	@echo "... MNeuralNet.i"
+	@echo "... MNeuralNet.s"
 	@echo "... NeuralNet.o"
 	@echo "... NeuralNet.i"
 	@echo "... NeuralNet.s"

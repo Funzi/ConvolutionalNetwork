@@ -137,14 +137,15 @@ void ConvLayer::forward_layer() {
             const int jj = std::max(0, j-diff);
             const int di = std::min(dim-1, i + diff) - ii;
             const int dj = std::min(dim-1, j + diff) - jj;
-            const int in_diff = (ii * dim + jj);                            //posun zacatku matice vectoru v inputu
-            const int w_diff = (diff - i + ii) * w_dim + (diff - j + jj);   //posun zacatku matice vectoru ve w
+            const int in_diff = (ii * dim + jj);                            //begin of the input
+            const int w_diff = (diff - i + ii) * w_dim + (diff - j + jj);   //begin of the w
 
             for (int d = 0; d < depth; d++) {
 
                 sum = bias[d] +
                         vectorDotProduct(&input[in_diff], &w[w_diff + d*wn], dim, w_dim, di, dj, input_depth);
-                out[out_diff + d*n] = ( sum > 0 ) ? sum : 0;         //ReLu
+                //out[out_diff + d*n] = ( sum > 0 ) ? sum : 0;         //ReLu
+                out[out_diff + d*n] = sigma(sum);                   //sigmoid
             }
         }
     }
@@ -152,31 +153,42 @@ void ConvLayer::forward_layer() {
 }
 
 
-void ConvLayer::backProp_layer() { //creates lower ddot array
+void ConvLayer::backProp_layer() {  //modify lower ddot array
+
+
 
     const int diff = w_dim/2;
-    double sum;
 
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
+    /**
+    for ( int i = 0; i < n * depth; i++) {      //derivate of ReLU
+        ddot[i] = (ddot[i] > 0) ? 1 : 0;
+    }
+     */
 
-            const int down_ddot_diff = i * dim + j;
+    for (int i = 0; i < n*depth; i++) {         //derivate of sigmoidal
+        ddot[i] *= out[i] * (1-out[i]);
+    }
 
-            const int ii = std::max(0, i-diff);
-            const int jj = std::max(0, j-diff);
-            const int di = std::min(dim-1, i + diff) - ii;
-            const int dj = std::min(dim-1, j + diff) - jj;
-            const int ddot_diff = (ii * dim + jj);                             //posun zacatku matice vektoru v inputu
-            const int w_diff = (diff - i + ii) * w_dim + (diff - j + jj);       //posun zacatku matice vektoru ve w
+    if (down != NULL)
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) {
 
-            for (int d = 0; d < input_depth; d++) {
+                const int down_ddot_diff = i * dim + j;
 
-                sum = backPropDotProduct(&ddot[ddot_diff], &w[w_diff + d*wn*depth], dim, w_dim, di, dj, wn, depth);
-                down_ddot[down_ddot_diff + n*d] = (sum > 0) ? 1 : 0;
-                                                        //ReLu
+                const int ii = std::max(0, i-diff);
+                const int jj = std::max(0, j-diff);
+                const int di = std::min(dim-1, i + diff) - ii;
+                const int dj = std::min(dim-1, j + diff) - jj;
+                const int ddot_diff = (ii * dim + jj);                             //begin of the input
+                const int w_diff = (diff - i + ii) * w_dim + (diff - j + jj);       //begin of the w
+
+                for (int d = 0; d < input_depth; d++) {
+
+                    down_ddot[down_ddot_diff + n*d] = backPropDotProduct(&ddot[ddot_diff], &w[w_diff + d*wn*depth], dim, w_dim, di, dj, wn, depth);
+
+                }
             }
         }
-    }
 }
 
 void ConvLayer::learn() {
@@ -195,7 +207,7 @@ void ConvLayer::learn() {
             const int w_diff = w_dim*i + j;
 
             for (int d = 0; d < depth; d++) {
-                for (int k = 0; k < input_depth; k++) {         //vsechny dvojice k a d
+                for (int k = 0; k < input_depth; k++) {
                     w[w_diff + d * wn * depth + k * wn] +=
                             dotProduct(&input[input_diff + k*n], &ddot[ddot_diff + d*n], dim, di, dj) * LR;
 
@@ -218,8 +230,8 @@ void ConvLayer::update_input(double* in) {
 
 
 ConvLayer::~ConvLayer() {
-    delete bias;
-    delete ddot;
-    delete out;
-    delete w;
+    delete []bias;
+    delete []ddot;
+    delete []out;
+    delete []w;
 };

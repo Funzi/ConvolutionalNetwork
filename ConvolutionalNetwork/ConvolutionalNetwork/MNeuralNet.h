@@ -1,5 +1,8 @@
 #pragma once
 #include "Layer.h"
+#include "ConvLayer.h"
+#include "PoolLayer.h"
+#include "FCLayer.h"
 #include <vector>
 #include <string>
 
@@ -7,13 +10,14 @@
 #define DIM_SQR 1024
 
 struct Layers {
-	Layer* FCLayer;
+	Layer* fcLayer;
 	Layer* convLayer;
 	Layer* poolLayer;
+
 };
 
 struct Input {
-	char label;
+	int label;
 	double *values;
 };
 
@@ -21,6 +25,9 @@ struct MyNeuralNet {
 	Layers* layers;
 	Input* input;
 	double results[10];
+    double totalError;
+    double* out;
+    double* errors;
 };
 
 namespace MNeuralNet {
@@ -33,6 +40,10 @@ namespace MNeuralNet {
 	void Learn(MyNeuralNet* net, std::string path);
 	
 	void LearnOneFile(MyNeuralNet* net, std::string filePath, int position);
+
+    bool checkAnswer(MyNeuralNet* net, int label);
+
+    void computeError(MyNeuralNet* net);
 
 	void Release(MyNeuralNet* net);
 }

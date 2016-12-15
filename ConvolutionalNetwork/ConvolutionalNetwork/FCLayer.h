@@ -10,23 +10,15 @@
 /**
 *@brief FullConnected layer
 */
-class FCLayer : public Layer{
+class FCLayer : public Layer {
 public:
-
-    double* ddot;
-    double* out;
-    double* w;
-
-    double* input;
-    double* down_ddot;
-
 
     /**
     *@brief constructor for the first layer
     *@param inputs number of inputs
     *@param neurons number of neurons
     */
-    FCLayer(int &inputs, int &neurons);
+    FCLayer(int inputs, int neurons);
 
     /**
     *@brief constructor for the upper layers
@@ -51,10 +43,10 @@ public:
     * @brief backpropagation for last layer
     * @param result expected values
     */
-    void computeError(double* result);
+    void updateDDot(double* error);
 
     /**
-    * @brief print weights
+    * @brief learn weights
     */
 
     void learn();
@@ -72,6 +64,8 @@ public:
     * @brief destructor
     */
     ~FCLayer();
+
+
 
 
 };

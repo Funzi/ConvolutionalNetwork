@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NN_neuron">
-				<Option output="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/NN_neuron" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option output="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/NN_neuron" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 NN_neuron"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 NN_neuron"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NN_neuron/fast">
-				<Option output="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/NN_neuron" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option output="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/NN_neuron" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,44 +77,50 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 NN_neuron/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 NN_neuron/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.cpp">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.h">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.h">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.cpp">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.h">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.h">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.cpp">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.h">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.h">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.h">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp">
 			<Option target="NN_neuron"/>
 		</Unit>
-		<Unit filename="/home/bobby/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/CMakeLists.txt">
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h">
+			<Option target="NN_neuron"/>
+		</Unit>
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/main.cpp">
+			<Option target="NN_neuron"/>
+		</Unit>
+		<Unit filename="/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -10,6 +10,7 @@ using namespace std;
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
 #define BATCH_SIZE 10000
+#define MOMENTUM 0.9
 
 void parseWeights(std::string weights_str, std::vector<double> &weights) {
 
@@ -85,50 +86,38 @@ static void setInput(std::string filename, Input* input, int position)
 	for (int i = PICTURE_SIZE * 2; i < PICTURE_SIZE * 3; i++) {
 		input->values[i] = (double)blue[i];
 	}
-
-	
 	file.close();
 }
 
-double* createResultArray(int label) {
-	double resultArray[10];
-	for (int i = 0; i < 10; i++) {
-		if (i == label) {
-			resultArray[i] = 1;
-		}
-		else {
-			resultArray[i] = 0;
-		}
-	}
-	return resultArray;
-}
-
-void setInputAndResult(std::string filename, Input* input, int position) {
-	setInput(filename, input, position);
-	createResultArray(input->label);
-}
 
 void MNeuralNet::Init(MyNeuralNet* net)
 {
 	net->layers = (Layers*)malloc(sizeof(Layers));
 	net->input = (Input*)malloc(sizeof(Input));
 	net->input->values = (double*)malloc(sizeof(double) * PICTURE_SIZE * 3);
-	
 
 	Layers* layers = net->layers;
-	
+
+
 	// not sure what parameters to put after it I can refactor it 
-	layers->convLayer = new ConvLayer(5,1,3,32,3,net->input->values);
+	layers->convLayer = new ConvLayer(5,1,12,32,3,net->input->values);
 	layers->poolLayer = new PoolLayer(layers->convLayer);
-	layers->FCLayer = new FCLayer(16*16*3,10, layers->poolLayer);
-	
+	layers->fcLayer = new FCLayer(16*16*12,10, layers->poolLayer);
+    layers->convLayer->input = net->input->values;
+
+    net->out = net->layers->fcLayer->out;
+	net->errors = net->layers->fcLayer->ddot;
 }
 
 void MNeuralNet::Evaluate(MyNeuralNet * net, string path)
 {
+    cout << "Evaluating net..." << endl;
+    int correct = 0;
 	for (int i = 0; i < BATCH_SIZE; i++) {
 		EvaluateOneFile(net, path,i);
+        if (checkAnswer(net, net->input->label)) correct++;
 	}
+    cout << "Number of correct answers: " << correct << " -> " << correct / 100 << '%' <<endl;
 }
 
 void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int position)
@@ -136,42 +125,68 @@ void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int positio
 	Layers* layers = net->layers;
 	
 	setInput(filePath, net->input, position);
-	
-	printf("Starting to evaluate %d file. \n", position);
+
 	layers->convLayer->forward_layer();
 	layers->poolLayer->forward_layer();
-	layers->FCLayer->forward_layer();
-	layers->FCLayer->print();
+	layers->fcLayer->forward_layer();
 }
 
 void MNeuralNet::Learn(MyNeuralNet* net, string path)
 {
-	for (int i = 0; i < 100; i++) {
+    double avgError = 0;
+    int correct = 0;
+	for (int i = 0; i < 10000; i++) {
 		LearnOneFile(net, path, i);
+        avgError += net->totalError;
+        if (checkAnswer(net, net->input->label)) correct++;
+        if ((i+1) % 1000 == 0) {
+            cout << "error: " << avgError/1000 << " | correct: " << correct << std::endl;
+            avgError = 0;
+            correct = 0;
+            net->layers->fcLayer->print();
+        }
 	}
 }
 
-void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int position)
-{
+
+void MNeuralNet::computeError(MyNeuralNet* net) {
+    double sum = 0;
+	for (int i = 0; i < 10; i++) {
+        net->errors[i] *= 1- MOMENTUM;
+        if (i == net->input->label)
+			net->errors[i] += (net->out[i] - 1)*MOMENTUM;
+        else net->errors[i] += net->out[i]*MOMENTUM;
+		sum += pow(net->errors[i], 2);
+    }
+    net->totalError = sum/2;
+}
+
+
+
+bool MNeuralNet::checkAnswer(MyNeuralNet* net, int label) {
+        for (int i = 0; i < 10; i++) {
+            if (net->out[i] > net->out[label]) return false;
+        }
+        return true;
+}
+
+void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int position) {
 	Layers* layers = net->layers;
 	
-	setInputAndResult(filePath, net->input,position);
-	
-	printf("Starting to learn %d.file \n", position + 1);
+	setInput(filePath, net->input,position);
 
 	layers->convLayer->forward_layer();
 	layers->poolLayer->forward_layer();
-	layers->FCLayer->forward_layer();
-	layers->FCLayer->print();
-	((FCLayer*)(layers->FCLayer))->computeError(net->results);
-	
-	layers->FCLayer->backProp_layer();
+	layers->fcLayer->forward_layer();
+    computeError(net);
+
+	layers->fcLayer->backProp_layer();
 	layers->poolLayer->backProp_layer();
-	
-	//addError
-	layers->convLayer->learn();
+	layers->convLayer->backProp_layer();
+
+	layers->fcLayer->learn();
 	layers->poolLayer->learn();
-	layers->FCLayer->learn();
+	layers->convLayer->learn();
 }
 
 void MNeuralNet::Release(MyNeuralNet* net)
