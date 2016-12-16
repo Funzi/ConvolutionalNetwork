@@ -21,13 +21,21 @@ const int NEURONS = 2; //number of neurons in one layer
 //const int ITERATIONS = 10000; //number of learning cycles
 
 void help(){
-    std::cout << "Use as follows " << "\n";
-    std::cout << "  Mode -m" << "\n";
-    std::cout << "      trainOn" << "\n";
-    std::cout << "      train" << "\n";
-    std::cout << "      eval" << "\n";
-    std::cout << "  Path to data file -f" << "\n";
-    std::cout << "  Path to log file -l" << "\n";
+    std::cout << "NN_Neuron is convolutional neural network for CIFAR-10 image classification. Use as follows:" << "\n\n";
+    std::cout << "  MODE -m" << "\n\n";
+    std::cout << "      Mode in which NN_Neuron runs, options are:" << "\n\n";
+    std::cout << "      train" << "\n\n";
+    std::cout << "          NN_neuron uses passed data file to train the neural network. The network is then saved into log file" << "\n\n";
+    std::cout << "      trainOn" << "\n\n";
+    std::cout << "          NN_neuron uses passed data file to train the neural network. The network is initialized from and then saved into log file" << "\n\n";
+    std::cout << "      eval" << "\n\n";
+    std::cout << "          NN_neuron initializes neural network from the log file and evaluates data file" << "\n\n";
+    std::cout << "  PATH TO DATA FILE -f" << "\n\n";
+    std::cout << "      Path to CIFAR-10 data file" << "\n\n";
+    std::cout << "  PATH TO DATA FILE -l" << "\n\n";
+    std::cout << "      Path to log file" << "\n\n";
+    std::cout << "For example:" << "\n\n";
+    std::cout << "./NN_Neuron -m train -f data_batch_1.bin -l cnn.log"  << "\n\n";
 
 }
 
