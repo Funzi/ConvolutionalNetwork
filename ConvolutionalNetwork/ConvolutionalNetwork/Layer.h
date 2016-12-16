@@ -7,6 +7,7 @@
 
 #include <cmath>        //include exp
 #include <algorithm>    //include rand
+#include <string>
 #define INIT_MAX 0.1  //max initialize weight
 #define INIT_MIN -0.1 //min initialize weight
 #define LR 0.001  //learning rate
