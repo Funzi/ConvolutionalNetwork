@@ -67,6 +67,16 @@ void PoolLayer::print() {
     //not implemented
 }
 
+std::string PoolLayer::printLayer(){
+    std::stringstream ss;
+
+    ss << "type:PoolLayer|";
+    ss << "\n";
+    std::string out = ss.str();
+    ss.clear();
+
+    return out;
+};
 
 PoolLayer::~PoolLayer() {
     delete ddot;

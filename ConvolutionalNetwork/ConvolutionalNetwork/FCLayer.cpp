@@ -90,6 +90,28 @@ void FCLayer::print() {
     std::cout << std::endl;
 }
 
+
+std::string FCLayer::printLayer(){
+
+    std::stringstream ss;
+
+    ss << "type:ConvLayer|";
+    ss << "inputs"<< in << "|";
+    ss << "neurons"<< n << "|";
+    ss << "weights:";
+
+    long n_weights = in*n;
+    for (int i = 0; i < n_weights; i++)
+        ss << w[i] << ",";
+
+    ss << "\n";
+
+    std::string out = ss.str();
+    ss.clear();
+
+    return out;
+};
+
 void FCLayer::setResults(double* results) {
 	for (int i = 0; i < 10; i++) {
 		results[i] = out[i];

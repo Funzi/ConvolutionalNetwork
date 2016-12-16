@@ -10,7 +10,7 @@ static int correctCount = 0;
 
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
-#define BATCH_SIZE 10000
+#define BATCH_SIZE 100
 
 void parseWeights(std::string weights_str, std::vector<double> &weights) {
 
@@ -203,6 +203,20 @@ void MNeuralNet::Release(MyNeuralNet* net)
 {
 	free(net->input->values);
 	free(net->input);
+}
+
+void MNeuralNet::SaveWeights(MyNeuralNet *net, std::string filePath) {
+
+    Layers* layers = net->layers;
+
+    std::ofstream logfile (filePath);
+
+    logfile << layers->convLayer->printLayer();
+    logfile << layers->poolLayer->printLayer();
+    logfile << layers->FCLayer->printLayer();
+
+    logfile.close();
+
 }
 
 

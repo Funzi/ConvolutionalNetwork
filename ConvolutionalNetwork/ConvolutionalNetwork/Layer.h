@@ -85,6 +85,10 @@ public:
     */
     virtual void print() = 0;
 
+    /**
+    * @brief printLayer
+    */
+    virtual std::string printLayer()=0;
 
 
 

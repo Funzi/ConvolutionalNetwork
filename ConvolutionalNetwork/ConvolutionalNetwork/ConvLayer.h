@@ -3,6 +3,8 @@
 //
 
 #include <vector>
+#include <sstream>
+#include <iostream>
 #include "Layer.h"
 
 #ifndef NN_NEURON_CONVLAYER_H
@@ -44,6 +46,7 @@ public:
 
     void print();
 
+    std::string printLayer();
 };
 
 

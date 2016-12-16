@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <sstream>
 #include "Layer.h"
 
 class PoolLayer : public Layer{
@@ -48,6 +49,9 @@ public:
     * @brief print
     */
     void print();
+
+    std::string printLayer();
+
 };
 
 

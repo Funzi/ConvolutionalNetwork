@@ -211,6 +211,29 @@ void ConvLayer::print() {
     //not implemented
 }
 
+std::string ConvLayer::printLayer(){
+
+    std::stringstream ss;
+
+    ss << "type:ConvLayer|";
+    ss << "filter_dim:"<< w_dim << "|";
+    ss << "stroke:"<< s << "|";
+    ss << "filters:"<< depth << "|";
+    ss << "in_dim:"<< input_dim << "|";
+    ss << "in_depth:"<< input_depth << "|";
+    ss << "weights:";
+
+    long n_weights = wn*depth*input_depth;
+    for (int i = 0; i < n_weights; i++)
+        ss << w[i] << ",";
+
+    ss << "\n";
+
+    std::string out = ss.str();
+    ss.clear();
+
+    return out;
+};
 
 void ConvLayer::update_input(double* in) {
     input = in;

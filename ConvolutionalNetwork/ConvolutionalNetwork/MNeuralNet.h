@@ -35,5 +35,9 @@ namespace MNeuralNet {
 	void LearnOneFile(MyNeuralNet* net, std::string filePath, int position);
 
 	void Release(MyNeuralNet* net);
+
+	void SaveWeights(MyNeuralNet* net, std::string filePath);
+
+
 }
 

@@ -5,6 +5,7 @@
 #ifndef NN_NEURON_FCLAYER_H
 #define NN_NEURON_FCLAYER_H
 
+#include <sstream>
 #include "Layer.h"
 
 /**
@@ -67,6 +68,8 @@ public:
     * @brief print
     */
     void print();
+
+    std::string printLayer();
 
 	void setResults(double* results);
 
