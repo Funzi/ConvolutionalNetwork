@@ -43,6 +43,54 @@ FCLayer::FCLayer(int &inputs, int &neurons) {
     for (int i = 0; i < in*n; ++i) { //randomly initializes weights
         w[i] = fRand(INIT_MIN,INIT_MAX);
     }
+
+    for (int i = 0; i < n; ++i) { //randomly initializes weights
+        bias[i] = fRand(INIT_MIN,INIT_MAX);
+    }
+
+};
+
+FCLayer::FCLayer(std::string layerInfo, Layer* lower) { //creates layer, number of inputs and neurons
+
+    int neurons, inputs;
+    std::vector<double> weights;
+    loadLayer(layerInfo, neurons, inputs, weights);
+
+    n = neurons;
+    in = inputs;
+    down = lower;
+    down_ddot = down->ddot;
+    input = down->out;
+    down->ou = n;
+    ddot = new double[n];
+    out = new double[n];
+    w = new double[in*n];
+    bias = new double[n];
+
+    for (int i = 0; i < in*n; ++i) { //randomly initializes weights
+        w[i] = fRand(INIT_MIN,INIT_MAX);
+    }
+    for (int i = 0; i < n; ++i) { //randomly initializes weights
+        bias[i] = fRand(INIT_MIN,INIT_MAX);
+    }
+}
+
+FCLayer::FCLayer(std::string layerInfo) {
+
+    int neurons, inputs;
+    std::vector<double> weights;
+    loadLayer(layerInfo, neurons, inputs, weights);
+
+    n = neurons;
+    in = inputs;
+    ddot = new double[n];
+    out = new double[n];
+    w = new double[in*n];
+    bias = new double[n];
+
+    for (int i = 0; i < in*n; ++i) { //randomly initializes weights
+        w[i] = weights[i];
+    }
     for (int i = 0; i < n; ++i) { //randomly initializes weights
         bias[i] = fRand(INIT_MIN,INIT_MAX);
     }
@@ -91,16 +139,16 @@ void FCLayer::print() {
 }
 
 
-std::string FCLayer::printLayer(){
+std::string FCLayer::printLayer() {
 
     std::stringstream ss;
 
-    ss << "type:ConvLayer|";
-    ss << "inputs"<< in << "|";
-    ss << "neurons"<< n << "|";
+    ss << "type:FCLayer|";
+    ss << "inputs:" << in << "|";
+    ss << "neurons:" << n << "|";
     ss << "weights:";
 
-    long n_weights = in*n;
+    long n_weights = in * n;
     for (int i = 0; i < n_weights; i++)
         ss << w[i] << ",";
 
@@ -110,7 +158,48 @@ std::string FCLayer::printLayer(){
     ss.clear();
 
     return out;
-};
+}
+
+
+void FCLayer::loadLayer(std::string layerInfo, int &neurons, int &inputs, std::vector<double> &weights){
+    std::string field, value, label;
+    std::size_t position, position_f;
+
+
+    // parse parameters
+    while ((position = layerInfo.find('|')) != std::string::npos) {
+
+        field = layerInfo.substr(0, position);
+        layerInfo = layerInfo.substr(++position);
+
+        // parse field
+        position_f = field.find(':');
+
+        label = field.substr(0, position_f);
+        value = field.substr(++position_f);
+
+        if (!label.compare("neurons")) {
+            neurons = std::stoi(value);
+        }
+        else if (!label.compare("inputs")) {
+            inputs = std::stoi(value);
+        }
+    }
+
+
+
+    // parse weights
+    field = layerInfo;
+    position_f = field.find(':');
+    label = field.substr(0, position_f);
+    value = field.substr(++position_f);
+
+    while ((position = value.find(',')) != std::string::npos && value.compare(",")) {
+        label = value.substr(0, position);
+        value = value.substr(++position);
+        weights.push_back((double) std::stof(label));
+    }
+}
 
 void FCLayer::setResults(double* results) {
 	for (int i = 0; i < 10; i++) {

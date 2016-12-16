@@ -90,8 +90,6 @@ public:
     */
     virtual std::string printLayer()=0;
 
-
-
 };
 
 #endif //FULLCONNECTEDNEURALNET_LAYER_H

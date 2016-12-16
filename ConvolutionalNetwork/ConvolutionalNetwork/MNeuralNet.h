@@ -26,6 +26,8 @@ struct MyNeuralNet {
 namespace MNeuralNet {
 	void Init(MyNeuralNet* net);
 
+    void Init(MyNeuralNet* net, std::string logPath);
+
 	void Evaluate(MyNeuralNet* net, std::string path);
 
 	void EvaluateOneFile(MyNeuralNet* net, std::string filePath, int position);

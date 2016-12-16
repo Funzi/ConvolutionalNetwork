@@ -50,8 +50,15 @@ public:
     */
     void print();
 
+    /**
+    * @brief printLayer
+    */
     std::string printLayer();
 
+    /**
+    * @brief loadLayer
+    */
+    void loadLayer();
 };
 
 

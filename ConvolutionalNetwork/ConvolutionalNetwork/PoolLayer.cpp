@@ -71,12 +71,19 @@ std::string PoolLayer::printLayer(){
     std::stringstream ss;
 
     ss << "type:PoolLayer|";
+    ss << "wights:0";
+
     ss << "\n";
     std::string out = ss.str();
     ss.clear();
 
     return out;
 };
+
+
+void PoolLayer::loadLayer(){
+
+}
 
 PoolLayer::~PoolLayer() {
     delete ddot;

@@ -38,6 +38,22 @@ public:
     FCLayer(int inputs, int neurons, Layer* lower);
 
     /**
+    *@brief constructor for the first layer
+    *@param inputs number of inputs
+    *@param neurons number of neurons
+    */
+    FCLayer(std::string layerInfo);
+
+    /**
+    *@brief constructor for the upper layers
+    *@param inputs number of inputs
+    *@param neurons number of neurons
+    *@param lower lower layer
+    */
+    FCLayer(std::string layerInfo, Layer* lower);
+
+
+    /**
     *@brief forward
     */
     void forward_layer();
@@ -70,6 +86,8 @@ public:
     void print();
 
     std::string printLayer();
+
+    void loadLayer(std::string layerInfo, int &neurons, int &inputs, std::vector<double> &weights);
 
 	void setResults(double* results);
 

@@ -10,53 +10,8 @@ static int correctCount = 0;
 
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
-#define BATCH_SIZE 100
+#define BATCH_SIZE 10000
 
-void parseWeights(std::string weights_str, std::vector<double> &weights) {
-
-	std::string value;
-	std::size_t position;
-
-	while ((position = weights_str.find(',')) != std::string::npos && weights_str.compare(",")) {
-		value = weights_str.substr(0, position);
-		weights_str = weights_str.substr(++position);
-		weights.push_back((double)std::stof(value));
-	}
-}
-
-void parseLogLine(std::string line, int &layerCode, int &neurons, int &inputs, std::vector<double> &weights) {
-
-	std::string field, value, label;
-	std::size_t position, position_f;
-
-	// parse parameters
-	while ((position = line.find('|')) != std::string::npos) {
-
-		field = line.substr(0, position);
-		line = line.substr(++position);
-
-		// parse field
-		position_f = field.find(':');
-
-		label = field.substr(0, position_f);
-		value = field.substr(++position_f);
-
-		if (!label.compare("layerCode")) {
-			layerCode = std::stoi(value);
-		}
-		else if (!label.compare("neurons")) {
-			neurons = std::stoi(value);
-		}
-	}
-
-	// parse weights
-	field = line;
-	position_f = field.find(':');
-	label = field.substr(0, position_f);
-	value = field.substr(++position_f);
-	parseWeights(value, weights);
-
-}
 
 static void setInput(std::string filename, Input* input, int position)
 {
@@ -130,7 +85,6 @@ void MNeuralNet::Init(MyNeuralNet* net)
 	net->layers = (Layers*)malloc(sizeof(Layers));
 	net->input = (Input*)malloc(sizeof(Input));
 	net->input->values = (double*)malloc(sizeof(double) * PICTURE_SIZE * 3);
-	
 
 	Layers* layers = net->layers;
 	
@@ -139,6 +93,30 @@ void MNeuralNet::Init(MyNeuralNet* net)
 	layers->poolLayer = new PoolLayer(layers->convLayer);
 	layers->FCLayer = new FCLayer(16*16*3,10, layers->poolLayer);
 	
+}
+
+void MNeuralNet::Init(MyNeuralNet* net, std::string logPath) {
+    net->layers = (Layers *) malloc(sizeof(Layers));
+    net->input = (Input *) malloc(sizeof(Input));
+    net->input->values = (double *) malloc(sizeof(double) * PICTURE_SIZE * 3);
+
+    Layers *layers = net->layers;
+
+
+    //load convLayer
+    std::string line, params;
+    std::ifstream logfile (logPath);
+
+    //load convLayer
+    std::getline(logfile, line);
+    layers->convLayer = new ConvLayer(line,net->input->values);
+
+
+    std::getline(logfile, line);
+    layers->poolLayer = new PoolLayer(layers->convLayer);
+
+    std::getline(logfile, line);
+    layers->FCLayer = new FCLayer(line, layers->poolLayer);
 }
 
 void MNeuralNet::Evaluate(MyNeuralNet * net, string path)

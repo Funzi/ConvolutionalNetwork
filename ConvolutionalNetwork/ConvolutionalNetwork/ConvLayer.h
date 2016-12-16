@@ -33,6 +33,11 @@ public:
 
     ConvLayer(int filter_dim, int stroke, int filters, Layer* lower);
 
+    ConvLayer(std::string info, double* input);
+
+    ConvLayer(std::string info, Layer* lower);
+
+
     void forward_layer();
 
     void backProp_layer();
@@ -47,6 +52,8 @@ public:
     void print();
 
     std::string printLayer();
+
+    void loadLayer(std::string line, int &filter_dim, int &stroke, int &filters, int &in_dim, int &in_depth, std::vector<double> &weights);
 };
 
 
