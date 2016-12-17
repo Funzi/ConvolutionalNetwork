@@ -57,7 +57,7 @@ ConvLayer::ConvLayer(int filter_dim, int stroke, int filters, int in_dim, int in
     //parameters of the input
     input_depth = in_depth;
     input_dim = in_dim;
-    input = in; //pole vektoru
+    input = in;
 
     //parameters of the output
     dim = input_dim;
@@ -118,10 +118,94 @@ ConvLayer::ConvLayer(int filter_dim, int stroke, int filters, Layer* lower) {
     }
 
     out = new double[n*depth];
+    ddot = new double[n*depth];
+}
+
+ConvLayer::ConvLayer(std::string layerInfo, double* in){
+
+    int filter_dim, stroke, filters, in_dim, in_depth;
+    std::vector<double> weights;
+    std::vector<double> vbias;
+
+    loadLayer(layerInfo, filter_dim, stroke, filters, in_dim, in_depth, weights, vbias);
+
+
+    //parameters of the input
+    input_depth = in_depth;
+    input_dim = in_dim;
+    input = in;
+
+    //parameters of the output
+    dim = input_dim;
+    depth = filters;
+    n = dim * dim;//pole vektor
+
+    //parameters of the filters
+    w_dim = filter_dim;
+    wn = w_dim * w_dim;  //number of weights in one layer
+    s = stroke;
+
+
+
+    w = new double[wn*depth*input_depth];
+    for (int i = 0; i < wn*depth*input_depth; i++) {
+        w[i] = weights[i];
+    }
+
+    bias = new double[depth];
+    for (int j = 0; j < depth; j++) {
+        bias[j] = fRand(INIT_MIN, INIT_MAX);
+
+    }
+
+    out = new double[n*depth];
     ddot = new double[n*depth]; //predat do horni vrstvy
 }
 
+ConvLayer::ConvLayer(std::string layerInfo, Layer* lower){
 
+    int filter_dim, stroke, filters, in_dim, in_depth;
+    std::vector<double> weights;
+    std::vector<double> vbias;
+
+    loadLayer(layerInfo, filter_dim, stroke, filters, in_dim, in_depth, weights, vbias);
+
+    //conection to lower layer
+    down = lower;
+
+    //parameters of the input
+    input_depth = down->depth;
+    input_dim = down->dim;
+    input = down->out;//predat do horni vrstvy
+    down_ddot = down->ddot;
+
+    //parameters of the output
+    dim = input_dim;
+    depth = filters;
+    n = dim * dim;
+
+    //parameters of the filters
+    w_dim = filter_dim;
+    wn = w_dim * w_dim;          //number of weights in one layer
+    s = stroke;
+
+
+    w = new double[wn*depth*input_depth];
+    for (int i = 0; i < wn*depth*input_depth; i++) {
+        w[i] = weights[i];
+    }
+
+    bias = new double[depth];
+    for (int j = 0; j < depth; j++) {
+        bias[j] = vbias[j];
+    }
+
+    out = new double[n*depth];
+    ddot = new double[n*depth];
+
+
+
+}
 
 void ConvLayer::forward_layer() {
 
@@ -221,6 +305,99 @@ void ConvLayer::learn() {
 
 void ConvLayer::print() {
     //not implemented
+}
+
+std::string ConvLayer::printLayer(){
+
+    std::stringstream ss;
+
+    ss << "type:ConvLayer|";
+    ss << "filter_dim:"<< w_dim << "|";
+    ss << "stroke:"<< s << "|";
+    ss << "filters:"<< depth << "|";
+    ss << "in_dim:"<< input_dim << "|";
+    ss << "in_depth:"<< input_depth << "|";
+    ss << "weights:";
+
+    long n_weights = wn*depth*input_depth;
+    for (int i = 0; i < n_weights; i++)
+        ss << w[i] << ",";
+
+    ss << "\n";
+
+    ss << "bias:";
+    for (int i = 0; i < depth; i++)
+        ss << bias[i] << ",";
+
+    ss << "\n";
+
+    std::string out = ss.str();
+    ss.clear();
+
+    return out;
+}
+
+void ConvLayer::loadLayer(std::string line, int &filter_dim, int &stroke, int &filters, int &in_dim, int &in_depth, std::vector<double> &weights, std::vector<double> &bias){
+
+    std::string field, value, label, bfield;
+    std::size_t position, position_f;
+
+    // parse parameters
+    while ((position = line.find('|')) != std::string::npos) {
+
+        field = line.substr(0, position);
+        line = line.substr(++position);
+        //bfield = line.substr(++position);
+
+        // parse field
+        position_f = field.find(':');
+
+        label = field.substr(0, position_f);
+        value = field.substr(++position_f);
+
+        if (!label.compare("filter_dim")) {
+            filter_dim = std::stoi(value);
+        }
+        else if (!label.compare("stroke")) {
+            stroke = std::stoi(value);
+        }
+        else if (!label.compare("filters")) {
+            filters = std::stoi(value);
+        }
+        else if (!label.compare("in_dim")) {
+            in_dim = std::stoi(value);
+        }
+        else if (!label.compare("in_depth")) {
+            in_depth = std::stoi(value);
+        }
+    }
+
+    // parse weights
+    field = line;
+    position_f = field.find(':');
+    label = field.substr(0, position_f);
+    value = field.substr(++position_f);
+
+    while ((position = value.find(',')) != std::string::npos && value.compare(",")) {
+        label = value.substr(0, position);
+        value = value.substr(++position);
+        weights.push_back((double) std::stof(label));
+    }
+
+
+    // parse bias
+    /**
+    field = bfield;
+    position_f = field.find(':');
+    label = field.substr(0, position_f);
+    value = field.substr(++position_f);
+
+    while ((position = value.find(',')) != std::string::npos && value.compare(",")) {
+        label = value.substr(0, position);
+        value = value.substr(++position);
+        bias.push_back((double) std::stof(label));
+    }
+     */
 }
 
 

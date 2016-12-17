@@ -7,9 +7,9 @@
 
 #include <cmath>        //include exp
 #include <algorithm>    //include rand
-#define INIT_MAX 0.0001  //max initialize weight
-#define INIT_MIN -0.0001 //min initialize weight
-#define LR 0.01  //learning rate
+#define INIT_MAX 0.001  //max initialize weight
+#define INIT_MIN -0.001 //min initialize weight
+#define LR 0.001  //learning rate
 
 
 //random function used for initialisation of weights
@@ -55,9 +55,6 @@ public:
     *@brief bias of layer
     */
     double* bias;
-    /**
-    *@brief bias of layer
-    */
 
     double* input;
     double* down_ddot;
@@ -89,8 +86,10 @@ public:
     */
     virtual void print() = 0;
 
-
-
+    /**
+    * @brief printLayer
+    */
+    virtual std::string printLayer()=0;
 
 };
 
