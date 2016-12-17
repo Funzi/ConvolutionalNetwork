@@ -22,11 +22,8 @@ CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o: ../Layer.h
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o: ../PoolLayer.cpp
 CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o: ../PoolLayer.h
 
-CMakeFiles/NN_neuron.dir/main.cpp.o: ../ConvLayer.h
-CMakeFiles/NN_neuron.dir/main.cpp.o: ../FCLayer.h
 CMakeFiles/NN_neuron.dir/main.cpp.o: ../Layer.h
 CMakeFiles/NN_neuron.dir/main.cpp.o: ../MNeuralNet.h
 CMakeFiles/NN_neuron.dir/main.cpp.o: ../NeuralNet.h
-CMakeFiles/NN_neuron.dir/main.cpp.o: ../PoolLayer.h
 CMakeFiles/NN_neuron.dir/main.cpp.o: ../main.cpp
 

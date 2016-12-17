@@ -197,7 +197,7 @@ ConvLayer::ConvLayer(std::string layerInfo, Layer* lower){
 
     bias = new double[depth];
     for (int j = 0; j < depth; j++) {
-        bias[j] = vbias[j];
+        bias[j] = fRand(INIT_MIN, INIT_MAX);
     }
 
     out = new double[n*depth];
@@ -324,13 +324,13 @@ std::string ConvLayer::printLayer(){
         ss << w[i] << ",";
 
     ss << "\n";
-
+/**
     ss << "bias:";
     for (int i = 0; i < depth; i++)
         ss << bias[i] << ",";
 
     ss << "\n";
-
+*/
     std::string out = ss.str();
     ss.clear();
 
@@ -339,7 +339,7 @@ std::string ConvLayer::printLayer(){
 
 void ConvLayer::loadLayer(std::string line, int &filter_dim, int &stroke, int &filters, int &in_dim, int &in_depth, std::vector<double> &weights, std::vector<double> &bias){
 
-    std::string field, value, label, bfield;
+    std::string field, value, label;
     std::size_t position, position_f;
 
     // parse parameters

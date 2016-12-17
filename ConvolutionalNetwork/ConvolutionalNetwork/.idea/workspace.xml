@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
-      <config projectName="NN_neuron" targetName="NN_neuron" />
       <config projectName="FullConnectedNeuralNet" targetName="NN_neuron" />
+      <config projectName="NN_neuron" targetName="NN_neuron" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -32,24 +32,34 @@
       <file leaf-file-name="MNeuralNet.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MNeuralNet.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="675">
               <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
               <folding>
                 <element signature="e#13#31#0" expanded="true" />
-                <marker date="1481840771549" expanded="true" signature="456:874" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MNeuralNet.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MNeuralNet.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MNeuralNet.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#3941#4289#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FCLayer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FCLayer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="181" column="6" lean-forward="false" selection-start-line="181" selection-start-column="6" selection-end-line="181" selection-end-column="6" />
+              <folding>
+                <element signature="e#44#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,9 +68,38 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="-121">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvLayer.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ConvLayer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="341" column="35" lean-forward="false" selection-start-line="341" selection-start-column="35" selection-end-line="341" selection-end-column="35" />
+              <folding>
+                <element signature="e#69#509#0" expanded="false" />
+                <element signature="e#512#844#0" expanded="false" />
+                <element signature="e#846#1442#0" expanded="false" />
+                <element signature="e#5044#6033#0" expanded="false" />
+                <element signature="e#6036#7231#0" expanded="false" />
+                <element signature="e#7233#8086#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvLayer.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConvLayer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,13 +122,13 @@
         <option value="$PROJECT_DIR$/FCLayer.h" />
         <option value="$PROJECT_DIR$/PoolLayer.h" />
         <option value="$PROJECT_DIR$/PoolLayer.cpp" />
-        <option value="$PROJECT_DIR$/FCLayer.cpp" />
         <option value="$PROJECT_DIR$/MNeuralNet.h" />
-        <option value="$PROJECT_DIR$/ConvLayer.cpp" />
         <option value="$PROJECT_DIR$/MNeuralNet.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/ConvLayer.h" />
         <option value="$PROJECT_DIR$/Layer.h" />
+        <option value="$PROJECT_DIR$/ConvLayer.h" />
+        <option value="$PROJECT_DIR$/FCLayer.cpp" />
+        <option value="$PROJECT_DIR$/ConvLayer.cpp" />
       </list>
     </option>
   </component>
@@ -191,7 +230,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
-  <component name="RunManager" selected="Application.FCnet">
+  <component name="RunManager" selected="Application.evaluate">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NN_neuron" TARGET_NAME="NN_neuron" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
@@ -367,14 +406,19 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="FCnet" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FullConnectedNeuralNet" TARGET_NAME="NN_neuron" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FullConnectedNeuralNet" RUN_TARGET_NAME="NN_neuron">
+    <configuration default="false" name="evaluate" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-m eval -f data_test.bin -l cnn.log" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FullConnectedNeuralNet" TARGET_NAME="NN_neuron" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FullConnectedNeuralNet" RUN_TARGET_NAME="NN_neuron">
       <envs />
       <method />
     </configuration>
-    <list size="3">
+    <configuration default="false" name="learn 1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-m train -f data_batch_1.bin -l cnn.log" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FullConnectedNeuralNet" TARGET_NAME="NN_neuron" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FullConnectedNeuralNet" RUN_TARGET_NAME="NN_neuron">
+      <envs />
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.NN_neuron" />
       <item index="1" class="java.lang.String" itemvalue="Application.Read" />
-      <item index="2" class="java.lang.String" itemvalue="Application.FCnet" />
+      <item index="2" class="java.lang.String" itemvalue="Application.evaluate" />
+      <item index="3" class="java.lang.String" itemvalue="Application.learn 1" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -401,11 +445,12 @@
       <workItem from="1481716630741" duration="8119000" />
       <workItem from="1481795159532" duration="22028000" />
       <workItem from="1481836233369" duration="11580000" />
+      <workItem from="1481990005531" duration="1557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170589000" />
+    <option name="totallyTimeSpent" value="172146000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -420,17 +465,17 @@
     <frame x="43" y="24" width="1323" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17538461" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43428063" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34365326" sideWeight="0.45384616" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34210527" sideWeight="0.45384616" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44582042" sideWeight="0.54615384" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4628483" sideWeight="0.5676923" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44272447" sideWeight="0.5676923" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4876161" sideWeight="0.4969231" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4860681" sideWeight="0.4969231" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -468,7 +513,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="85" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/FCLayer.cpp</url>
+          <line>61</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -782,11 +834,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MNeuralNet.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="675">
           <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
           <folding>
             <element signature="e#13#31#0" expanded="true" />
-            <marker date="1481840771549" expanded="true" signature="456:874" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -807,28 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConvLayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="142" column="45" lean-forward="true" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
-          <folding>
-            <element signature="e#69#509#0" expanded="false" />
-            <element signature="e#512#844#0" expanded="false" />
-            <element signature="e#846#1442#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConvLayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Layer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-460">
@@ -839,29 +868,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FCLayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+        <state relative-caret-position="196">
+          <caret line="181" column="6" lean-forward="false" selection-start-line="181" selection-start-column="6" selection-end-line="181" selection-end-column="6" />
           <folding>
             <element signature="e#44#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MNeuralNet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConvLayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="-121">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MNeuralNet.cpp">
+    <entry file="file://$PROJECT_DIR$/ConvLayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="341" column="35" lean-forward="false" selection-start-line="341" selection-start-column="35" selection-end-line="341" selection-end-column="35" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#3941#4289#0" expanded="false" />
+            <element signature="e#69#509#0" expanded="false" />
+            <element signature="e#512#844#0" expanded="false" />
+            <element signature="e#846#1442#0" expanded="false" />
+            <element signature="e#5044#6033#0" expanded="false" />
+            <element signature="e#6036#7231#0" expanded="false" />
+            <element signature="e#7233#8086#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -172,13 +172,14 @@ std::string FCLayer::printLayer() {
         ss << w[i] << ",";
 
     ss << "\n";
-
+/**
     ss << "bias:";
 
     for (int i = 0; i < n; i++)
         ss << bias[i] << ",";
 
     ss << "\n";
+    */
 
     std::string out = ss.str();
     ss.clear();

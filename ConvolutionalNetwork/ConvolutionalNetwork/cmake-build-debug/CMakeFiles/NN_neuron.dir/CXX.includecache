@@ -13,6 +13,10 @@ ConvLayer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.h
 vector
 -
+sstream
+-
+iostream
+-
 Layer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h
 
@@ -25,6 +29,8 @@ FCLayer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.h
 
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.h
+sstream
+-
 Layer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h
 
@@ -51,12 +57,6 @@ fstream
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.h
 Layer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h
-ConvLayer.h
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/ConvLayer.h
-PoolLayer.h
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h
-FCLayer.h
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/FCLayer.h
 vector
 -
 string
@@ -73,6 +73,8 @@ PoolLayer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h
 vector
 -
+sstream
+-
 Layer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/Layer.h
 
@@ -85,7 +87,7 @@ vector
 -
 algorithm
 -
-string
+string.h
 -
 fstream
 -
