@@ -10,7 +10,7 @@ static int correctCount = 0;
 
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
-#define BATCH_SIZE 10000
+#define BATCH_SIZE 100
 #define MOMENTUM 0.9
 
 
@@ -115,12 +115,15 @@ void MNeuralNet::Init(MyNeuralNet* net, std::string logPath) {
     std::getline(logfile, line);
     layers->convLayer = new ConvLayer(line,net->input->values);
 
-
     std::getline(logfile, line);
     layers->poolLayer = new PoolLayer(layers->convLayer);
 
     std::getline(logfile, line);
     layers->FCLayer = new FCLayer(line, layers->poolLayer);
+
+	net->out = net->layers->FCLayer->out;
+	net->errors = net->layers->FCLayer->ddot;
+
 }
 
 void MNeuralNet::Evaluate(MyNeuralNet * net, string path)
@@ -168,7 +171,8 @@ void MNeuralNet::Learn(MyNeuralNet* net, string path)
 
 void MNeuralNet::checkAnswer(MyNeuralNet* net, int label) {
     bool ans = true;
-    for (int i = 0; i < 10; i++) {
+
+	for (int i = 0; i < 10; i++) {
         if (net->out[i] > net->out[label]) ans = false;
     }
     if (ans) correctCount++;
@@ -192,7 +196,7 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	Layers* layers = net->layers;
 	
 	setInput(filePath, net->input, position);
-	
+
 	//printf("Starting to learn %d.file \n", position + 1);
 	//printf("The result should be %d \n", net->input->label + 1);
 
@@ -200,11 +204,12 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	layers->poolLayer->forward_layer();
 	layers->FCLayer->forward_layer();
     checkAnswer(net, net->input->label);
+
 	//layers->FCLayer->print();
 	//((FCLayer*)(layers->FCLayer))->computeError(net->results);
 	//((FCLayer*)(layers->FCLayer))->setResults(net->results);
 	computeError(net);
-	
+
 	layers->FCLayer->backProp_layer();
 	layers->poolLayer->backProp_layer();
 	layers->convLayer->backProp_layer();

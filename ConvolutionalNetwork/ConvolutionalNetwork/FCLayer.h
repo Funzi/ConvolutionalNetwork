@@ -89,7 +89,7 @@ public:
      * @param inputs number of neurons in lower layer
      * @param weights values of weights
      */
-    void loadLayer(std::string layerInfo, int &neurons, int &inputs, std::vector<double> &weights);
+    void loadLayer(std::string layerInfo, int &neurons, int &inputs, std::vector<double> &weights, std::vector<double> &biases);
 
     /**
      * @brief updates derivates

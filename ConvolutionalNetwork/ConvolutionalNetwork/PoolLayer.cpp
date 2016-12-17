@@ -4,6 +4,7 @@
 
 #include "PoolLayer.h"
 
+
 PoolLayer::PoolLayer(Layer* lower) {
 
     down = lower;
@@ -38,7 +39,6 @@ void PoolLayer::forward_layer() {
             }
         }
     }
-
 }
 
 void PoolLayer::backProp_layer() {

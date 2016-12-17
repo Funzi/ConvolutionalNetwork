@@ -154,7 +154,7 @@ ConvLayer::ConvLayer(std::string layerInfo, double* in){
 
     bias = new double[depth];
     for (int j = 0; j < depth; j++) {
-        bias[j] = fRand(INIT_MIN, INIT_MAX);
+        bias[j] = vbias[j];
 
     }
 
@@ -197,14 +197,11 @@ ConvLayer::ConvLayer(std::string layerInfo, Layer* lower){
 
     bias = new double[depth];
     for (int j = 0; j < depth; j++) {
-        bias[j] = fRand(INIT_MIN, INIT_MAX);
+        bias[j] = vbias[j];
     }
 
     out = new double[n*depth];
     ddot = new double[n*depth];
-
-
-
 }
 
 void ConvLayer::forward_layer() {
@@ -323,31 +320,28 @@ std::string ConvLayer::printLayer(){
     for (int i = 0; i < n_weights; i++)
         ss << w[i] << ",";
 
-    ss << "\n";
-/**
-    ss << "bias:";
+    ss << "/bias:";
     for (int i = 0; i < depth; i++)
         ss << bias[i] << ",";
 
     ss << "\n";
-*/
+
     std::string out = ss.str();
     ss.clear();
 
     return out;
 }
 
-void ConvLayer::loadLayer(std::string line, int &filter_dim, int &stroke, int &filters, int &in_dim, int &in_depth, std::vector<double> &weights, std::vector<double> &bias){
+void ConvLayer::loadLayer(std::string layerInfo, int &filter_dim, int &stroke, int &filters, int &in_dim, int &in_depth, std::vector<double> &weights, std::vector<double> &bias){
 
-    std::string field, value, label;
+    std::string field, value, label,weights_str, biases_str;
     std::size_t position, position_f;
 
     // parse parameters
-    while ((position = line.find('|')) != std::string::npos) {
+    while ((position = layerInfo.find('|')) != std::string::npos) {
 
-        field = line.substr(0, position);
-        line = line.substr(++position);
-        //bfield = line.substr(++position);
+        field = layerInfo.substr(0, position);
+        layerInfo = layerInfo.substr(++position);
 
         // parse field
         position_f = field.find(':');
@@ -371,12 +365,18 @@ void ConvLayer::loadLayer(std::string line, int &filter_dim, int &stroke, int &f
             in_depth = std::stoi(value);
         }
     }
+// parse weights
+    field = layerInfo;
+    position = field.find('/');
+    weights_str = field.substr(0, position);
+    biases_str = field.substr(++position);
 
-    // parse weights
-    field = line;
-    position_f = field.find(':');
-    label = field.substr(0, position_f);
-    value = field.substr(++position_f);
+    // weights
+    position_f = weights_str.find(':');
+    label = weights_str.substr(0, position_f);
+    value = weights_str.substr(++position_f);
+
+    int i = 0;
 
     while ((position = value.find(',')) != std::string::npos && value.compare(",")) {
         label = value.substr(0, position);
@@ -384,20 +384,18 @@ void ConvLayer::loadLayer(std::string line, int &filter_dim, int &stroke, int &f
         weights.push_back((double) std::stof(label));
     }
 
+    // weights
+    position_f = biases_str.find(':');
+    label = biases_str.substr(0, position_f);
+    value = biases_str.substr(++position_f);
 
-    // parse bias
-    /**
-    field = bfield;
-    position_f = field.find(':');
-    label = field.substr(0, position_f);
-    value = field.substr(++position_f);
-
+    i = 0;
     while ((position = value.find(',')) != std::string::npos && value.compare(",")) {
         label = value.substr(0, position);
         value = value.substr(++position);
         bias.push_back((double) std::stof(label));
     }
-     */
+
 }
 
 
