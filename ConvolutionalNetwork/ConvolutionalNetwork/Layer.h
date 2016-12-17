@@ -9,7 +9,7 @@
 #include <algorithm>    //include rand
 #define INIT_MAX 0.001  //max initialize weight
 #define INIT_MIN -0.001 //min initialize weight
-#define LR 0.001  //learning rate
+#define LR 0.0001  //learning rate
 
 
 //random function used for initialisation of weights
