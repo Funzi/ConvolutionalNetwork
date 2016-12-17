@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/NN_neuron.dir/FCLayer.cpp.o"
   "CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o"
   "CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o"
-  "CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o"
   "CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o"
   "NN_neuron.pdb"
   "NN_neuron"

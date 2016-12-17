@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <string.h>
 #include <fstream>
-#include "NeuralNet.h"
 #include "MNeuralNet.h"
 
 

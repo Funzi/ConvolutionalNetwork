@@ -10,7 +10,7 @@ static int correctCount = 0;
 
 #define PICTURE_SIZE 1024
 #define LABEL_SIZE 1
-#define BATCH_SIZE 100
+#define BATCH_SIZE 10000
 #define MOMENTUM 0.9
 
 
@@ -128,20 +128,22 @@ void MNeuralNet::Init(MyNeuralNet* net, std::string logPath) {
 
 void MNeuralNet::Evaluate(MyNeuralNet * net, string path)
 {
+    cout << "Evaluating file " << path << ", it can take about two minutes..." << endl;
 	for (int i = 0; i < BATCH_SIZE; i++) {
 		EvaluateOneFile(net, path,i);
 	}
-	printf("\nEvaluation was correct in %f%% \n", (double)correctCount / (double)BATCH_SIZE);
+	printf("\nEvaluation was correct in %f%% \n", (double)correctCount * 100 / BATCH_SIZE);
 }
 
 void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int position)
 {
+
 	Layers* layers = net->layers;
 	
 	setInput(filePath, net->input, position);
 	
-	printf("The result should be %d \n", net->input->label + 1);
-	printf("Starting to evaluate %d file. \n", position);
+	//printf("The result should be %d \n", ((net->input->label) + 1));
+	//printf("Starting to evaluate %d file. \n", position);
 	layers->convLayer->forward_layer();
 	layers->poolLayer->forward_layer();
 	layers->FCLayer->forward_layer();
@@ -173,7 +175,7 @@ void MNeuralNet::checkAnswer(MyNeuralNet* net, int label) {
     bool ans = true;
 
 	for (int i = 0; i < 10; i++) {
-        if (net->out[i] > net->out[label]) ans = false;
+        if (net->out[i] > net->out[label]) {ans = false; break; }
     }
     if (ans) correctCount++;
 }
@@ -205,9 +207,6 @@ void MNeuralNet::LearnOneFile(MyNeuralNet* net, std::string filePath, int positi
 	layers->FCLayer->forward_layer();
     checkAnswer(net, net->input->label);
 
-	//layers->FCLayer->print();
-	//((FCLayer*)(layers->FCLayer))->computeError(net->results);
-	//((FCLayer*)(layers->FCLayer))->setResults(net->results);
 	computeError(net);
 
 	layers->FCLayer->backProp_layer();

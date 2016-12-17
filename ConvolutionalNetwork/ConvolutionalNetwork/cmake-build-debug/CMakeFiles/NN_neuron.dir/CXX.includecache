@@ -62,16 +62,14 @@ vector
 string
 -
 
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.cpp
-
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.h
-
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.cpp
 PoolLayer.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h
 
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/PoolLayer.h
 vector
+-
+iostream
 -
 sstream
 -
@@ -91,8 +89,6 @@ string.h
 -
 fstream
 -
-NeuralNet.h
-/home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/NeuralNet.h
 MNeuralNet.h
 /home/bobby/master_david/ConvolutionalNetwork/ConvolutionalNetwork/ConvolutionalNetwork/MNeuralNet.h
 

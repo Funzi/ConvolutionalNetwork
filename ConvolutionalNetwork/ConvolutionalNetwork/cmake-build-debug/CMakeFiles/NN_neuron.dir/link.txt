@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++11 -g   CMakeFiles/NN_neuron.dir/main.cpp.o CMakeFiles/NN_neuron.dir/FCLayer.cpp.o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o  -o NN_neuron 
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/NN_neuron.dir/main.cpp.o CMakeFiles/NN_neuron.dir/FCLayer.cpp.o CMakeFiles/NN_neuron.dir/PoolLayer.cpp.o CMakeFiles/NN_neuron.dir/ConvLayer.cpp.o CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.o  -o NN_neuron 

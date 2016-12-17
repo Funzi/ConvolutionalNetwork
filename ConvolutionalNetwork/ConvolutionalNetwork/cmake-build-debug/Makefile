@@ -204,33 +204,6 @@ MNeuralNet.cpp.s:
 	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/MNeuralNet.cpp.s
 .PHONY : MNeuralNet.cpp.s
 
-NeuralNet.o: NeuralNet.cpp.o
-
-.PHONY : NeuralNet.o
-
-# target to build an object file
-NeuralNet.cpp.o:
-	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/NeuralNet.cpp.o
-.PHONY : NeuralNet.cpp.o
-
-NeuralNet.i: NeuralNet.cpp.i
-
-.PHONY : NeuralNet.i
-
-# target to preprocess a source file
-NeuralNet.cpp.i:
-	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/NeuralNet.cpp.i
-.PHONY : NeuralNet.cpp.i
-
-NeuralNet.s: NeuralNet.cpp.s
-
-.PHONY : NeuralNet.s
-
-# target to generate assembly for a file
-NeuralNet.cpp.s:
-	$(MAKE) -f CMakeFiles/NN_neuron.dir/build.make CMakeFiles/NN_neuron.dir/NeuralNet.cpp.s
-.PHONY : NeuralNet.cpp.s
-
 PoolLayer.o: PoolLayer.cpp.o
 
 .PHONY : PoolLayer.o
@@ -303,9 +276,6 @@ help:
 	@echo "... MNeuralNet.o"
 	@echo "... MNeuralNet.i"
 	@echo "... MNeuralNet.s"
-	@echo "... NeuralNet.o"
-	@echo "... NeuralNet.i"
-	@echo "... NeuralNet.s"
 	@echo "... PoolLayer.o"
 	@echo "... PoolLayer.i"
 	@echo "... PoolLayer.s"
