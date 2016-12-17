@@ -136,6 +136,7 @@ void MNeuralNet::Evaluate(MyNeuralNet * net, string path)
 }
 
 void MNeuralNet::EvaluateOneFile(MyNeuralNet * net, string filePath, int position)
+
 {
 
 	Layers* layers = net->layers;
